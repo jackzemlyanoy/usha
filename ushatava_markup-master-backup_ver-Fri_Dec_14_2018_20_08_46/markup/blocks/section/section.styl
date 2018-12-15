@@ -1,0 +1,432 @@
+//-----------------------basic page layout and styles---------------------------------------
+@import "../banner/banner.styl"
+
+.section
+	position relative
+	display flex
+	max-width: 100vw;
+	//max-width: 100%
+	&_col,
+	&__col
+		display: flex
+		flex-direction: column
+		ul
+			margin: 0
+			padding: 0
+		&_bordered
+			box-shadow: inset 1px 0 0 0 $gray_c;
+
+		&_padding
+			justify-content: space-between
+			padding: 22px 32px
+		&_magenta
+			background-color: $magenta
+	&__row,
+	&_row
+		width: 100%
+		display: flex
+		flex-direction: row
+		flex-wrap wrap
+		&_centered
+			margin: 0 auto
+		&_margin
+			margin: 24px auto
+			
+		&_slider-head
+			align-items: center
+			padding-y(26px)
+			+mobile()
+				padding-x(20px)
+				padding-y(20px)
+				text-align: center
+		&_slider-view
+			position: relative
+			height 460px
+			+below(500px)
+				height 320px
+			+below(425px)
+				height 240px
+		&_slider-info
+			position: relative
+			height 460px
+			+below(810px)
+				height 390px
+			
+		&_white
+			background-color: white
+			color: black
+	&_centered
+		margin: 0 auto
+
+	//if header is position fixed
+	&_margin-header
+		margin-top 110px
+		+below(810px)
+			margin-top: 85px
+	&_margin-form
+		margin-top: 180px
+		margin-bottom: 190px
+		+below(1199px)
+			margin-top: 150px
+			margin-bottom: 175px
+		+below(992px)
+			margin-top: 120px
+			margin-bottom: 150px
+		+mobile()
+			margin-top: 50px
+			margin-bottom: 25px
+	&_margin-bottom,
+	&__margin-bottom
+		margin-bottom 80px
+		+below(1199px)
+			margin-bottom 60px
+		+below(992px)
+			margin-bottom: 20px
+
+		&_100
+			margin-bottom 100px
+			+below(1199px)
+				margin-bottom 90px
+			+below(992px)
+				margin-bottom: 70px
+			+mobile()
+				margin-bottom 50px
+			+below(550px)
+				margin-bottom: 20px
+			
+			
+		&_50
+			margin-bottom 50px
+		&_40
+			margin-bottom: 40px
+		&_30
+			margin-bottom 30px
+			
+		&_24
+			margin-bottom 24px
+		&_20
+			margin-bottom: 20px
+		&_15
+			margin-bottom: 15px
+		&_10
+			margin-bottom: 10px
+
+		&_page-info
+			margin-bottom: 32px
+			+below(992px)
+				margin-bottom: auto
+		&_md
+			margin: 0
+			+below(992px)
+				margin-bottom: 50px
+		&_sm
+			margin: 0
+			+mobile()
+				margin-bottom: 50px
+	
+	&_90
+		max-width 90%
+	
+	&_height-100
+		& .container,
+		& .row
+		& .col-xs-12
+			height 100%
+	
+	&_height-ie
+		+ie9()
+			& .container,
+			& .row
+			& .col-xs-12.relative
+				height 100%
+				overflow hidden
+	
+	&_width-100
+		width 100%
+		& .container,
+		& .row
+		& .col-xs-12
+			width 100%
+	
+	&_width-ie
+		+ie9()
+			& .container,
+			& .row
+			& .col-xs-12.relative
+				width 100%
+				overflow hidden
+	
+	&__text
+		font-size: 10px
+		line-height: 14px
+		text-transform uppercase
+		letter-spacing 3px
+		
+		&_big
+			font-size: 30px
+			line-height: 36px
+		
+		&_large
+			font-size: 18px
+			line-height: 30px
+			
+		&_16
+			font-size: 16px
+			line-height: 22px
+			
+		&_med
+			font-size: 14px
+			line-height 20px
+			text-transform: none
+			letter-spacing normal
+			.section__wrapper &
+				color #7F8288
+			
+		&_medium
+			font-size: 14px
+			line-height: 30px
+			
+		&_footer
+			font-size: 12px
+			line-height: 40px
+			.footer__mobile &
+				font-size: 16px
+				line-height: 55px
+		
+		&_normal
+			font-size: 12px
+			line-height:16px
+		
+		&_small
+			font-size: 9px
+			line-height: 16px
+		&_nocapital
+			text-transform none
+		&_centered
+			text-align: center
+		&_underline
+			text-decoration: underline
+		&_border-top
+			display: inline-block
+			margin-top: 0
+			padding-top 12px
+			border-top 1px solid $gray_40
+
+		&_white
+			color white
+		&_gray6
+			color: $gray_6
+		&_gray9
+			color: $gray_9
+		&-brown
+			color #d5a48c
+			
+		&_form
+			font-size: 14px
+			line-height 19px
+			text-align: center
+			color: $form
+		&_policy
+			font-size: 12px
+			line-height: 16px
+			color rgba(127, 130, 136, 0.5)
+			+mobile()
+				font-size: 10px
+				line-height: 14px
+	
+	&__title
+		margin 10px 0 42px
+		font-size: 32px
+		font-weight: bold
+		line-height: 48px
+		letter-spacing 3px
+		+desktop()
+			font-size 2rem
+
+		+tablet()
+			font-size 1.75rem
+
+		+mobile()
+			padding-x(10px)
+			
+		&_nomargin
+			margin: 0
+
+		~/_padding &
+			margin-top 0
+			margin-bottom 70px
+
+			+desktop()
+				margin-bottom 40px
+
+			+tablet()
+				margin-bottom 30px
+
+			+mobile()
+				margin-bottom 20px
+		.product &
+			margin-bottom: 21px
+			margin-top: 0
+
+	&__title_centered
+		text-align center!important
+		
+	&__title_major
+		font-size: 36px
+		font-weight: bold
+		line-height: 50px
+		+desktop()
+			font-size 32px
+			line-height: 48px
+		+tablet()
+			font-size 28px
+			line-height: 36px
+		+mobile()
+			font-size 24px
+			line-height: 30px
+		.info-block__inner-wrapper &
+			margin: 5px 0
+	&__title_article
+		margin: 12px 0
+		font-size: 20px
+		font-weight: bold
+		line-height: 24px
+	&__title_form
+		@extend .section__title
+		margin-top: 0
+		margin-bottom 17px
+		font-size: 22px
+		font-weight: 400
+		text-transform: uppercase
+		letter-spacing 3px
+		line-height: 30px
+		
+		+tablet()
+			font-size 20px
+			line-height: 28px
+		+mobile()
+			font-size 18px
+			line-height: 25px
+		&__wrapper &
+			@extend .section__margin-bottom_15
+	
+	&__title_small
+		font-size: 18px
+		font-weight: 500
+		line-height: 32px
+		text-align: center;
+		
+		+tablet()
+			
+			font-size 1rem
+		
+		+mobile()
+			
+			font-size 1rem
+			line-height 1.4
+		
+		~/_padding &
+			margin-top 0
+			margin-bottom 43px
+			
+			+desktop()
+				margin-bottom 40px
+			
+			+tablet()
+				margin-bottom 30px
+			
+			+mobile()
+				margin-bottom 20px
+
+	&__title-link
+		position absolute
+		top 15px
+		right 50px
+		font-size .875rem
+		
+		+below(991px)
+			position static
+			text-align right
+			margin-right 20px
+			margin-top -10px
+	
+	&__subtitle
+		margin 25px auto 60px
+		padding-x(15px)
+		max-width 500px
+		line-height 1.62
+		text-align center
+		
+		+hd()
+			margin-bottom 70px
+		
+		+desktop()
+			margin-bottom 50px
+		
+		+tablet()
+			margin-bottom 40px
+		
+		+mobile()
+			margin-bottom 20px
+		
+		& strong
+			font-weight 400
+	
+	&__btn
+		text-align center
+		margin-top 30px
+		padding 0 15px
+		
+		+hd()
+			margin-top 40px
+		
+		+desktop()
+			margin-top 25px
+		
+		+tablet()
+			margin-top 20px
+		
+		+mobile()
+			margin-top 15px
+
+	&__img
+		width: 100%
+		&_margined
+			margin-top: 85px
+			
+	&__wrapper
+		display: flex
+		flex-direction: column
+		width 317px
+		height 200px
+		max-width 100%
+		&_top
+			margin-top: 16.5px
+		p
+			padding-bottom 32px
+		+mobile()
+			width 100%
+			height: 140px
+			margin: auto;
+			text-align: center;
+		.page_collection &
+			align-items flex-start
+	
+				
+	&_sex
+		margin-x(auto)
+		display: flex
+		flex-direction: column
+		align-items: center
+		a
+			text-transform: uppercase
+			font-size: 16px
+			line-height: 22px
+			margin: 0
+			
+		a + a
+			margin-top: 48px
+			
+
+
+

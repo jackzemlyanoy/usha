@@ -1,0 +1,202 @@
+// Common styles of the project
+*
+	outline none
+
+html, body
+	box-sizing border-box
+	text-decoration-skip: objects
+a
+	color inherit
+	text-decoration: none
+	cursor pointer
+	transition all .3s linear
+	&:hover
+		opacity 0.5
+	&:active
+		opacity 0.8
+
+ul
+	padding: 0
+	margin: 0
+
+li
+	list-style-type: none
+
+p
+	margin: 12px 0
+	cursor pointer
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	padding: 0
+	font-weight normal
+	
+hr.hr
+	border: none
+	color: #BBBBBB
+	background-color: #BBBBBB
+	height: 1px
+	width auto
+	margin 20px
+
+button
+	border-width: 0
+
+* html .page__wrapper
+	height 100%
+
+
+:active, :hover, :focus
+	outline: 0
+	outline-offset: 0
+	
+	
+/*  Helpers */
+.absolute
+	position: absolute
+	&_centered
+		top: 50%
+		transform: translateY(-50%)
+		right: 0
+		left: 0
+
+.initial
+	position: initial
+	&-mobile
+		+mobile()
+			position: initial
+.oh
+	overflow hidden
+.oh-x
+	overflow-x hidden
+.oh-y
+	overflow-y hidden
+	
+.relative
+	position: relative
+
+.fixed
+	position: fixed
+
+.hidden
+	display: none !important
+
+.scroll
+	overflow scroll
+
+.wh100
+	width: 100%
+
+.vw100
+	width: 100vw
+
+.vw50
+	width: 50vw
+
+.ht100
+	height: 100%
+
+.nopadding
+	padding: 0 !important
+
+.nomargin
+	margin: 0 !important
+
+.perspective
+	perspective: 1000px;
+	transform-style: preserve-3d;
+
+.grow
+	flex-grow 1
+
+.page__wrapper
+	min-height 100%
+	margin-bottom -50px
+
+.border-bottom
+	border-bottom 1px solid $asphalt
+
+.border-top
+	border-top 1px solid $asphalt
+	&_white
+		border-top 1px solid white
+
+.desktop-only
+	+below(768px)
+		display: none !important
+
+.mobile-only
+	display: none !important
+	+below(768px)
+		display: flex !important
+
+.transitory
+	display: none
+	position: absolute
+	bottom: 0
+	margin-bottom 48px
+	height auto
+	width: 370px
+	max-width 100vw
+	text-align center
+	left 50%
+	transform translateX(-50%)
+	+mobile()
+		display: block
+		
+	*
+		color: white
+	p
+		font-size: 12px
+		line-height: 16px
+		letter-spacing: 3px
+		margin-bottom: 15px
+	h2
+		padding-bottom: 28px
+		font-size: 28px
+		line-height: 38px
+		letter-spacing: 5px
+		font-weight: bold
+	.section__row
+		width: 77%
+		margin: auto
+		+below(425px)
+			width: 85%
+	.btn_underline:after
+		background white
+
+.mt-a
+	margin-top: auto
+
+.mb-a
+	margin-bottom: auto
+
+.ml-a
+	margin-left: auto
+
+.mr-a
+	margin-right: auto
+
+.mb1846
+	margin-bottom: 18.46px
+
+.mb30
+	margin-bottom: 30px
+
+.mb15
+	margin-bottom: 15px
+
+//text alignment
+.text-center
+	text-align: center
+
+.text-start
+	text-align: start
+
+.text-right
+	text-align: right
+
+.text-left
+	text-align: left
+    
+    

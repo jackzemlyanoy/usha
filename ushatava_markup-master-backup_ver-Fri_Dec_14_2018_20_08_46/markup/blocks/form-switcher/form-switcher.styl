@@ -1,0 +1,81 @@
+@import "../section/section.styl"
+.form-switcher
+	background-color: #fff
+	padding 36px 55px 50px
+	text-align: center
+	max-width 455px
+	p
+		margin: 0
+		
+	h2
+		@extend .section__text_normal
+		text-transform: uppercase
+		line-height: 30px
+		letter-spacing: 3px
+		padding-bottom: 30px
+	
+	span
+		font-size: 10px
+		line-height: 14px
+		color $asphalt
+		
+	strong
+		font-size: 12px
+		line-height 16px
+		padding-bottom 11px
+		
+	a
+		font-size: 12px
+		line-height 16px
+	
+	.container_form
+		width 100%
+		max-width 100%
+		margin 0 auto
+		display: flex
+		flex-direction column
+		justify-content: space-between
+		flex-wrap wrap
+	
+	.section__row
+		width 300px
+		
+	.form-group
+		position relative
+		width: 167px
+		&:after
+			content ''
+			position: absolute
+			top: 50%;
+			transform: translateY(-50%);
+			right 15px
+			display: block
+			color: #59585D
+			font-size 12px
+			line-height 16px
+			text-transform uppercase
+			letter-spacing 2px
+		&.height_sm
+			&:after
+				content: 'см'
+		&.height_inch
+			&:after
+				content: 'in'
+		&.weight_kg
+			&:after
+				content: 'кг'
+		&.weight_lbs
+			&:after
+				content: 'lbs'
+		
+	.form-control
+		box-shadow 0 0 0 1px #E0E0E0 inset
+		padding: 19px 16px
+		line-height 16px
+		
+	.section__text_normal
+		width 315px;
+		color $asphalt
+		padding-bottom: 30px
+	.btn
+		margin-bottom: 40px

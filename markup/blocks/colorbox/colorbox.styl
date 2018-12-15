@@ -1,0 +1,249 @@
+@import "../icon-fonts/icon-fonts.styl"
+#colorbox,
+#cboxOverlay,
+#cboxWrapper
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 9999
+	overflow: hidden
+	-webkit-transform translate3d(0, 0, 0)
+
+#cboxWrapper
+	max-width: none
+
+#cboxOverlay
+	position: fixed
+	width: 100%
+	height: 100%
+
+#cboxMiddleLeft,
+#cboxBottomLeft
+	clear: left
+
+#cboxContent
+	position: relative
+
+#cboxLoadedContent
+	//padding-x(20px)
+	overflow: auto
+	-webkit-overflow-scrolling: touch
+
+#cboxTitle
+	margin: 0
+
+#cboxLoadingOverlay,
+#cboxLoadingGraphic
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow
+	cursor: pointer
+
+.cboxPhoto
+	float: left
+	margin: auto
+	border: 0
+	display: block
+	max-width: none
+	-ms-interpolation-mode: bicubic
+
+.cboxIframe
+	width: 100%
+	height: 100%
+	display: block
+	border: 0
+	padding: 0
+	margin: 0
+
+#colorbox,
+#cboxContent,
+#cboxLoadedContent
+	box-sizing: content-box
+	-moz-box-sizing: content-box
+	-webkit-box-sizing: content-box
+
+#cboxOverlay
+	background-color: RGBA(41, 40, 41, 0.9)
+	opacity: 1 !important
+
+#colorbox
+	outline: 0
+
+#cboxContent
+	opacity 1
+	//+mobile()
+	//	margin 10px
+	//	padding 30px 10px
+	.error &,
+	.agreement-form &,
+	.page_404 &
+		background-color: white
+		color black
+
+.cboxIframe
+	background: #292829
+
+#cboxError
+	padding: 50px
+	border: 1px solid #ccc
+
+#cboxLoadedContent
+	background: transparent
+
+#cboxTitle
+	margin: 0
+	position: absolute
+	bottom: -35px
+	left: 0
+	background: #e5e8f0
+	color: #444444
+	width: 100%
+	font-size: 14px
+	padding: 10px
+	min-height: 50px
+	//display: flex !important
+	align-items: center
+	justify-content: center
+	display none !important
+
+#cboxCurrent
+	position: absolute
+	top: -20px
+	right: 0
+	color: #ccc
+	display: none
+
+#cboxLoadingGraphic
+	//background: url(/assets/img//loading.gif) no-repeat center center
+	/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose
+	border: 0
+	padding: 0
+	margin: 0
+	overflow: visible
+	width: auto
+	background: none
+
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+
+#cboxPrevious:active,
+#cboxNext:active,
+#cboxSlideshow:active,
+#cboxClose:active
+	outline: 0
+
+#cboxSlideshow
+	position: absolute
+	top: -20px
+	right: 90px
+	color: #fff
+
+#cboxPrevious
+	position: absolute
+	top: 50%
+	left: -45px
+	margin-top: -18px
+	width: 25px
+	outline: none
+	display: none
+	color: #f2f3f2
+	font-size: 36px
+	
+	&:hover
+		color: #989897
+
+#cboxNext
+	position: absolute
+	top: 50%
+	right: -45px
+	margin-top: -18px
+	width: 25px
+	outline: none
+	display: none
+	color: #f2f3f2
+	font-size: 36px
+	
+	&:hover
+		color: #989897
+
+//#cboxClose
+//	z-index: 99;
+//	position: absolute
+//	top: 2vh;
+//	right: 3%;
+//	left: auto
+//	display: block
+//	line-height: 1
+//	outline: 0
+//	opacity: 1
+//
+
+.colorbox
+	&#zoom
+		height 100%
+	&__img
+		position:fixed
+		top:0
+		width:100%
+		z-index:0
+		height:100%
+		background-image: url("/static/img/assets/slider/1.png")
+		background-repeat: no-repeat
+		background-size: cover
+	
+	&__close
+		z-index: 99
+		font-size: 20px
+		position: fixed;
+		top 64px
+		right: 64px
+		display: block
+		height: 40px
+		width: 40px
+		transition all .3s ease-out
+		cursor: pointer
+		&:hover
+			opacity 0.5
+			cursor: pointer
+		
+		&:active
+			opacity 0.8
+		&:before
+			display: block
+			color: white
+			font-weight bold
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			right: 0
+			left: 0
+			@extend .icon-fonts:before
+			@extend .icon-close:before
+		&_gray
+			right: 30px
+			top 30px
+			&:before
+				font-weight normal
+				color #c2c2c2
+
+	&__thumbnails
+		z-index 22
+		top 60px
+		left: 60px
+		position absolute
+		display: flex
+		flex-direction: column
+		width: 86px
+		img
+			width: 100%
+			cursor: pointer
+		+mobile()
+			display: none
+		

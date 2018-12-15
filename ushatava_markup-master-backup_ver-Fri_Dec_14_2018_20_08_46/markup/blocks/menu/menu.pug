@@ -1,0 +1,19 @@
+include ../btn/btn
+mixin menu(data)
+	if data == header.nav
+		+b.NAV.menu&attributes(attributes)(class= data.mod ? '_' + data.mod : '' )
+			+e.UL.list(class= data.mod ? '_' + data.mod : '' )
+				each item in data.list
+					+e.LI.item
+						//+e.A.link(class= item.class, href= item.url)
+						+e.SPAN.link(class= item.class)
+							+e.SPAN.title
+								| #{item.title}
+	else
+		+b.menu&attributes(attributes)(class= data.mod ? '_' + data.mod : '' )
+			+e.UL.list(class= data.mod ? '_' + data.mod : '' )
+				each item in data.list
+					+e.LI.item
+						+e.A.link(class= item.class, href= item.url)
+							+e.SPAN.title
+								| #{item.title}

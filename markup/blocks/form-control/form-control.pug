@@ -1,0 +1,29 @@
+mixin form-control(args)
+	if args.type == 'button'
+		+b.BUTTON.form-control&attributes(attributes)(
+			type=args.type ? args.type : 'button'
+			name=args.name ? args.name : null
+			value=args.value ? args.value : null
+			placeholder=args.placeholder ? args.placeholder : null
+			class=attributes.class
+			id=attributes.id ? attributes.id : null)
+			block
+
+	else if args.type == 'textarea'
+		+b.TEXTAREA.form-control._textarea&attributes(attributes)(
+			name=args.name ? args.name : null
+			placeholder=args.placeholder ? args.placeholder : null
+			maxlength='1000'
+			class=attributes.class
+			id=attributes.id ? attributes.id : null)= args.value ? args.value : null
+	else
+		.form-error.hidden Введите недостающие данные
+		+b.INPUT.form-control&attributes(attributes)(
+			type=args.type ? args.type : 'text'
+			name=args.name ? args.name : null
+			value=args.value ? args.value : null
+			placeholder=args.placeholder ? args.placeholder : null
+			maxlength='150'
+			class=attributes.class
+			id=attributes.id ? attributes.id : null)
+

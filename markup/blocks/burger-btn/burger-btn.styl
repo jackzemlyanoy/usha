@@ -1,0 +1,49 @@
+.burger-btn
+	display: flex
+	flex-direction: column
+	cursor pointer
+	height 17px
+	z-index 5
+	transition all 200ms linear
+	.header__menu &
+		margin-right: auto
+		
+	+below(1199px)
+		display block
+
+	&_fixed
+		position fixed
+		top 22px
+		right 27px
+
+	&_close
+		opacity 1
+		text-shadow none
+		
+
+	&__line
+		transition all 200ms linear
+		background white
+		display block
+		width 30px
+		height 2px
+		&_top,
+		&_middle
+			margin-bottom 6px
+		.header_white &
+			background #55575C
+
+		&_top
+			~/_close &
+				transform rotateZ(45deg) translateX(6px) translateY(5px) !important
+
+		&_middle
+			transition opacity 300ms ease-in-out 0
+
+			~/_close &
+				opacity 0
+
+		&_bottom
+			~/_close &
+				width: 30px
+				transform rotateZ(-45deg) translateX(6px) translateY(-5px) !important

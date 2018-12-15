@@ -1,0 +1,98 @@
+.footer
+	margin-bottom: 60px
+	+below(992px)
+		margin-bottom: 30px
+	+mobile()
+		margin-bottom: 10px
+	&__wrapper
+		display: block
+		margin-bottom: 90px
+		width: 100%
+		+desktop()
+			margin-bottom 75px
+
+		+tablet()
+			margin-bottom 60px
+
+		+mobile()
+			margin-bottom 10px
+			text-align center
+		
+	&__col
+		display: flex
+		flex-direction: column
+		&_right
+			margin-left: auto
+			+below(992px)
+				justify-content: space-between
+				flex-direction: row
+				margin-top: 10px
+
+	&__title
+		color #59585D
+		display: inline-block
+		margin: 0
+		
+	&__socials-block
+		display: flex
+		margin-left: auto
+		align-items: baseline
+		width: 100%
+		.btn + .btn
+			margin-left: 20.55px
+	&__subinfo
+		display: flex
+		+mobile()
+			display: none
+	&__policy
+		color #7F8288
+		text-align: center
+		a
+			color #7F8288
+			position: relative
+			display: inline-flex
+			transition all .3s linear
+			&:after
+				position: absolute
+				bottom 0
+				left 0
+				content ''
+				width: 100%
+				background-color #7F8288
+				height: .8px
+				transition all .3s linear
+			&:hover
+				opacity 0.5
+				&:after
+					opacity 0.5
+			&:active
+				opacity 0.8
+				&:after
+					opacity 0.8
+		+below(992px)
+			text-align: right
+					
+	&__desktop
+		display: flex
+		+mobile()
+			display: none
+	&__mobile
+		display: none
+		+mobile()
+			border-top 1px solid #bbb
+			padding-top: 20px
+			margin-x(20px)
+			display: flex
+			flex-direction: column
+			align-items: center
+			.page_collection &
+				border-top none
+			.page_card &
+				margin-bottom 50px
+		
+		
+	placeholder()
+		color #7F8288
+		font-size: 14px
+		line-height: 19px
+		

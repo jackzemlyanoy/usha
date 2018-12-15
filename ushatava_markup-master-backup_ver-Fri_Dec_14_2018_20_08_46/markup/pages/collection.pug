@@ -1,0 +1,166 @@
+extends ../blocks/layout-default/layout-default
+
+include ../blocks/head/head
+
+include ../blocks/header/header
+
+include ../blocks/banner/banner
+include ../blocks/info-block/info-block
+include ../blocks/menu/menu
+include ../blocks/form-dispatch/form-dispatch
+include ../blocks/section/section
+include ../blocks/slider/slider
+
+include ../blocks/footer/footer
+
+
+block head
+	+head(head.defaults)
+
+block page-class
+	- var pageClassModifier = '_collection';
+
+block header
+	+header()._transparent
+
+block content
+	+section._col._margin-bottom.justify-content-center.align-items-center.desktop-only
+		+banner({title: "LIMITED CRUISE COLLECTION", img: 'banner_1'},{
+			type: 'a',
+			url: '#anchor1',
+			color: 'transparent',
+			text: 'scroll down'
+		}, 'collection')
+
+	+section._col._margin-header.mobile-only.align-items-center.section__margin-bottom_20
+		h2.section__text.section__text_16 все товары
+		span.section__text women
+
+	+section._col.justify-content-center.align-items-center#anchor1
+		.container_big
+			.row.justify-content-between.relative
+				.section__col.section__margin-bottom_50.col-lg-3.col-md-6.col-sm-12.desktop-only
+					+e.wrapper
+						+e.H2.title_form.section__margin-bottom_15 LIMITED CRUISE COLLECTION
+						+e.P.text_med.nomargin Для тех кто живет летом, дышит воздухом свободы и готов экспериментировать с кроем.
+						+btn({type: 'a', color: 'transparent', text: 'смотреть lookbook'})._underline.mt-a
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'c1',
+						title: 'платье греческое с вырезом',
+						header: {type: '1', text: 'online exclusive'},
+						price: '5900'
+					})
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'c2',
+						title: 'леггинсы трикотажные',
+						header: {type: '2', text: 'comming soon'},
+						price: '2300',
+						colors: ['black']
+					})
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'c3',
+						title: 'платье-туника',
+						header: {type: '2', text: 'sold out'},
+						price: '11900',
+						colors: ['brown', 'black']
+					})
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'c4',
+						title: 'платье-туника',
+						header: {type: '1', text: 'online exclusive'},
+						price: '11900',
+						colors: ['gray', 'black']
+					})
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'c5',
+						title: 'боди с v-вырезом',
+						price: '2900',
+						colors: ['black']
+					})
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'm3',
+						title: 'бомбер из денима удлиненный',
+						header: {type: '2', text: 'online exclusive'},
+						price: '7500'
+					})
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'c6',
+						title: 'костюм хлопковый в полоску',
+						price: '9900',
+						colors: ['blue']
+					})
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'c4',
+						title: 'платье-туника',
+						header: {type: '1', text: 'online exclusive'},
+						price: '11900',
+						colors: ['gray', 'black']
+					})
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'c5',
+						title: 'боди с v-вырезом',
+						price: '2900',
+						colors: ['black']
+					})
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'm3',
+						title: 'бомбер из денима удлиненный',
+						header: {type: '2', text: 'online exclusive'},
+						price: '7500'
+					})
+				.section__col.section__margin-bottom_50.col-lg-3.col-6
+					+info-block({
+						type: 'A',
+						link: 'card.html',
+						img: 'c6',
+						title: 'костюм хлопковый в полоску',
+						price: '9900',
+						colors: ['blue']
+					})
+
+
+
+	+section._col.justify-content-center.align-items-center
+		.container_big
+			+banner({title: "LIMITED CRUISE COLLECTION", lookbook: true, img: 'banner_1'},{
+				type: 'a',
+				color: 'transparent',
+				text: 'ВДОХНОВЛЕНИЕ'
+			})
+
+	+section._col._margin-form.justify-content-center.align-items-center.desktop-only
+		+form-dispatch
+
+block footer
+	+footer()
+

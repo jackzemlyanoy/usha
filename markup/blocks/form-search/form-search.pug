@@ -1,0 +1,17 @@
+include ../icon-fonts/icon-fonts
+include ../form-control/form-control
+
+mixin form-search()
+    +b.FORM.form-search&attributes(attributes)
+        +e.data
+            +form-control({
+                name: 'search_value',
+                type: 'text',
+                placeholder: 'поиск'
+            })._search.js-form-search-input
+
+        +e.btn
+            .btn_search.js-form-search-btn
+                +icon-fonts('icon-search').js-form-search-btn
+
+//-button(type='submit')

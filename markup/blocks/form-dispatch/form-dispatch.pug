@@ -1,0 +1,23 @@
+include ../form-group/form-group
+
+mixin form-dispatch(data)
+	+b.form-dispatch&attributes(attributes)#callback
+		.container_form.d-flex.flex-wrap.flex-column
+			h2.section__title_form.text-center Рассылка
+			p.section__text_form Секретные распродажи, уникальные акции и интересные статьи только для подписчиков рассылки
+			+form-group({
+				id: 'r_2',
+				name: 'r_2',
+				type: 'text',
+				placeholder: 'Введите свой e-mail',
+				class: 'form-control_dispath'
+			}).section__margin-bottom_30
+
+			+form-group({
+				id: 'r_10',
+				name: 'r_10',
+				type: 'submit',
+				submit: 'подписаться'
+			}).btn_brown._big.wh100.justify-content-center
+			p.section__text_policy.text-center Нажав на "Подписаться", Вы соглашаетесь с
+				a.link.link_underline политикой конфиденциальности.

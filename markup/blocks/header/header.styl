@@ -1,0 +1,174 @@
+@import "../icon-fonts/icon-fonts.styl"
+
+.header
+	position: fixed
+	top: 0
+	width 100%
+	max-width: 100vw
+	display flex
+	align-items center
+	z-index 999
+	transition all .4s linear
+	@media print
+		display none
+	&_white
+		background-color: white
+		transition all .4s linear
+		.logo svg
+			transition all .4s linear
+			fill $colorText
+		.header__basket svg
+			fill $asphalt
+			
+	&_transparent
+		background-color: transparent
+		transition all .4s linear
+		fill white
+		.logo svg
+			transition all .4s linear
+			fill white
+		.header__basket svg
+			fill white
+		&-dark
+			background-color: transparent
+			transition all .4s linear
+			+below(992px)
+				.logo
+					svg
+						transition all .4s linear
+						fill $asphalt
+				.header__basket svg
+					svg
+						fill $asphalt
+	
+	&_scrolled
+		background-color: rgba(255, 255, 255, 0.95)
+		transition all .4s linear
+		.header__row
+			padding: 10px
+		.header__basket
+			width: 20.6px - 15%
+			height: 22px - 15%
+			+below(992px)
+				svg
+					fill white
+		+below(992px)
+			background-color rgba(85, 87, 92, 0.4)
+	
+	&__row
+		display: flex
+		width: 100%
+		padding: 30px 0
+		transition all .4s linear
+	
+	&__wrapper
+		text-transform uppercase
+		display flex
+		flex-wrap: wrap
+		align-items center
+		padding-x(20px)
+	
+	&__logo
+		display: flex
+		align-items: center;
+		+below(992px)
+			justify-content: center
+	
+	&__icon
+		display: block;
+		max-width: 100%;
+		fill: white
+		
+	//dropdown submenu
+	&__submenu
+		padding-x(60px)
+		padding-y(17.5px)
+		display flex
+		opacity 0
+		position: absolute;
+		left: 0;
+		width: 100%
+		max-height: 285px
+		background-color rgba(255,255,255, 0.9)
+		transform: translateY(-150%)
+		transition all .4s linear
+		&-img 
+			display block
+			max-height: 210px
+			padding-y(12.5px)
+
+	&__submenu.show 
+		transform: translateY(0)
+		opacity: 1
+	
+	&__menu_open
+		max-height 140px
+		
+		+below(992px)
+			max-height 400px
+	
+	&__basket
+		position: relative
+		display: flex
+		width: 20.6px
+		height: 22px
+		transition all .4s linear
+		svg
+			width: 100%
+			height: 100%
+			fill $asphalt
+			transition all .4s linear
+			+below(992px)
+				fill $colorText
+		&:hover
+			svg
+				opacity: 0.5
+		&:active
+			svg
+				opacity: 0.8
+				
+		.basket-summ
+			z-index: 999;
+			display: flex;
+			position: absolute;
+			top: -5px;
+			width: 19px;
+			height: 19px;
+			right: 11px;
+			border-radius: 50%;
+			background-color: $brown
+			justify-content: center;
+			align-items: center;
+			opacity: 0.8;
+			&__quantity
+				display: flex
+				justify-content: center;
+				text-align: center
+				position: absolute
+				width: 70%
+				font-size: 11px
+				line-height 1
+				font-weight: normal
+				color: white
+				text-overflow: ellipsis
+			+below(992px)
+				background-color: white
+				width 16px
+				height: 16px
+				&__quantity
+					color $colorText
+	
+	&__mobile-btn
+		display none
+		
+		+below(992px)
+			display block
+	
+	&-menu
+		display: flex
+		flex-grow 1
+		justify-content: space-between
+		margin: 0 auto
+		+below(992px)
+			display: none
+	

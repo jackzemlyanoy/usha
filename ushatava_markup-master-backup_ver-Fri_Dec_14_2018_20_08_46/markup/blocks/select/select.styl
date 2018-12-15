@@ -1,0 +1,97 @@
+@import "../icon-fonts/icon-fonts.styl"
+
+.select
+	display: flex
+	justify-content: space-between
+	width: 100%
+	color: $colorText
+	position: relative;
+
+.select__dropdown
+	display inline-flex
+	justify-content: space-between;
+	align-items center
+	border 1px solid $gray_frame
+	width: 100%;
+	padding: 15px 10px
+	cursor: pointer;
+	position: relative;
+	&:after
+		margin-left 8px
+		font-size: 10px;
+		right:20px;
+		top:18px;
+		@extend .icon-fonts:before
+		@extend .icon-down:before
+		
+.select__color
+	display: flex
+	flex-grow: 1;
+	&-beige
+		display inline-flex
+		align-items center
+		&:before
+			margin-right: 9.3px
+			z-index: 99;
+			content: '';
+			display: inline-flex;
+			width: 19.75px;
+			height: 19.75px;
+			background: $beige_icon
+	&-gold
+		display inline-flex
+		align-items center
+		&:before
+			margin-right: 9.3px
+			z-index: 99;
+			content: '';
+			display: inline-flex;
+			width: 19.75px;
+			height: 19.75px;
+			background: $golden
+	&-asphalt
+		display inline-flex
+		align-items center
+		&:before
+			margin-right: 9.3px
+			z-index: 99;
+			content: '';
+			display: inline-flex;
+			width: 19.75px;
+			height: 19.75px;
+			background: $asphalt
+	
+	
+
+.select__menu
+	border 1px solid $gray_frame
+	position: absolute;
+	right:0;
+	top: 51px;
+	width: 100%
+	background white
+	cursor: pointer;
+	max-height 0
+	transition:all 0.8s;
+	z-index:5;
+	overflow:hidden;
+	opacity 0
+
+.select__menu li
+	padding: 10px 10px;
+	transition:all 0.3s;
+
+.select__menu li:hover
+	padding-left:20px;
+
+.select__menu_show
+	max-height 200px
+	opacity 1
+	z-index 99
+
+
+.select > *
+	text-transform: uppercase
+	font-size: 12px
+	line-height: 16px
+	letter-spacing: 2px

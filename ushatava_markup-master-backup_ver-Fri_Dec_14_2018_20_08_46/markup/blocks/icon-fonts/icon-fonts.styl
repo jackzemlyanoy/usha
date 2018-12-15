@@ -1,0 +1,43 @@
+$iconFont = "ushatava"
+
+@font-face {
+	font-family: $iconFont;
+	src: url('../fonts/ushatava.eot?79185269');
+	src: url('../fonts/ushatava.eot?79185269#iefix') format('embedded-opentype'),
+			url('../fonts/ushatava.woff2?79185269') format('woff2'),
+			url('../fonts/ushatava.woff?79185269') format('woff'),
+			url('../fonts/ushatava.ttf?79185269') format('truetype'),
+			url('../fonts/ushatava.svg?79185269#ushatava') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+// ! перепроверь путь до шрифта, font -> fonts
+.icon-fonts
+	position relative
+	display inline-block
+	&:before
+		font-family $iconFont
+		font-style: normal;
+		font-weight: normal;
+		speak: none;
+
+		display: inline-block;
+		text-decoration: inherit;
+		text-align: center;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1em;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+.icon-left:before { content: '\e800'; } /* '' */
+.icon-right:before { content: '\e801'; } /* '' */
+.icon-up:before { content: '\e802'; } /* '' */
+.icon-down:before { content: '\e803'; } /* '' */
+.icon-instagram:before { content: '\e804'; } /* '' */
+.icon-facebook:before { content: '\e805'; } /* '' */
+.icon-vk:before { content: '\e806'; } /* '' */
+.icon-search:before { content: '\e807'; } /* '' */
+.icon-logo:before { content: '\e80a'; } /* '' */
+.icon-cart:before { content: '\e80b'; } /* '' */
+.icon-close:before { content: '\e80c'; } /* '' */

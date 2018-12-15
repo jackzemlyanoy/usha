@@ -1,0 +1,65 @@
+//default project styles for body
+//set font size for 1 rem
+
+.page
+    margin 0
+    padding 0
+    display flex
+    width 100%
+    min-height 100vh
+    flex-direction column
+    font-family $fontMain
+    font-size 14px
+    line-height 19px
+    cursor default
+    color $colorText
+    background $colorBg
+    &_overflow
+        overflow hidden
+    &_feedback
+        background $white
+    &__img
+        &_main
+            display: block
+            max-width 100%
+            max-height: 100vw
+            margin: 0 auto
+
+    &__title
+        font-size: 2rem
+        &_main
+            width: 100%
+            margin-bottom: 24px
+            margin-top: 0
+            color $white
+            text-align: center
+            font-size: 4rem
+            line-height: 72px
+            font-weight: 500
+            text-shadow: 0 0 12px 0 #000000
+            +tablet()
+                font-size: 2.6rem;
+                line-height: 1.4;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            +mobile()
+                font-size 24px
+                font-weight 500
+                line-height 32px
+                text-align center
+                margin-bottom: 1rem
+        &_section
+            text-align left
+            padding 0 25px 30px
+            +hd()
+                padding 0 30px 40px
+
+            +desktop()
+                padding 0 20px 25px
+
+            +tablet()
+                padding  0 15px 20px
+
+            +mobile()
+                padding 0 15px 15px
+

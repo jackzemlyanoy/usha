@@ -1,0 +1,91 @@
+include ../select/select
+include ../btn/btn
+include ../accordion/accordion
+include ../checkbox/checkbox
+
+mixin card(data)
+
+	+b.card&attributes(attributes)
+		+e.title.mb1846 #{data.title}
+		+e.price.mb1846
+			span.js--price #{data.price}
+			| &nbspRUB
+		+select.mb30
+			+e.SPAN.color-beige бежевый
+			+e.SPAN.color-gold золотистый
+			+e.SPAN.color-asphalt графитовый
+
+		+e.sizes.section__row
+			label.checkbox.checkbox-s
+				input(type="checkbox" value = 's' name="" )
+				span.checkbox__text
+			label.checkbox.checkbox-m
+				input(type="checkbox" value = 'm' name="" )
+				span.checkbox__text
+			label.checkbox.checkbox-l.none
+				input(type="checkbox" value = 'l' name="" )
+				span.checkbox__text
+
+
+		+e.A.link-bottom.card__text_medium.section__margin-bottom_40.colorbox-trigger-inline(href='#switcher') узнать мой размер
+
+
+		+btn({type: 'a', url: '#want', color: 'brown', text: 'Хочу купить'})._big.wh100.justify-content-center.section__margin-bottom_40.colorbox-trigger-inline
+
+		ul.card__accordion.accordion
+			li.accordion__item
+				span.accordion__title Проверить наличие в шоурумах
+				.accordion__submenu.submenu_toggle
+					p.section__text_normal Чтобы проверить наличие в шоурумах, выберите Ваш размер
+					+btn({type: 'a', color: 'brown', text: 'Выбрать размер'})._margined
+
+			li.accordion__item
+				span.accordion__title Доставка
+				.accordion__submenu
+					+e.row_item
+						+e.SPAN.city Шоурум Москва
+						+e.SPAN.amount_last последний размер
+					+e.row_item
+						+e.SPAN.city Шоурум Санкт-Петербург
+						+e.SPAN.amount_few в наличии мало
+					+e.row_item
+						+e.SPAN.city Шоурум Екатеринбург
+						+e.SPAN.amount_none в наличии нет
+					+e.row_item
+						+e.SPAN.city Шоурум Сочи
+						+e.SPAN.amount_available есть в наличии
+			li.accordion__item
+				span.accordion__title Состав и уход
+				.accordion__submenu
+					+e.row_item
+						+e.SPAN.city Шоурум Москва
+						+e.SPAN.amount_last последний размер
+					+e.row_item
+						+e.SPAN.city Шоурум Санкт-Петербург
+						+e.SPAN.amount_few в наличии мало
+					+e.row_item
+						+e.SPAN.city Шоурум Екатеринбург
+						+e.SPAN.amount_none в наличии нет
+					+e.row_item
+						+e.SPAN.city Шоурум Сочи
+						+e.SPAN.amount_available есть в наличии
+			li.accordion__item
+				span.accordion__title Описание товара
+				.accordion__submenu
+					+e.row_item
+						+e.SPAN.city Шоурум Москва
+						+e.SPAN.amount_last последний размер
+					+e.row_item
+						+e.SPAN.city Шоурум Санкт-Петербург
+						+e.SPAN.amount_few в наличии мало
+					+e.row_item
+						+e.SPAN.city Шоурум Екатеринбург
+						+e.SPAN.amount_none в наличии нет
+					+e.row_item
+						+e.SPAN.city Шоурум Сочи
+						+e.SPAN.amount_available есть в наличии
+			li.accordion__item
+				a.accordion__title-chat#chat Задать вопрос про товар
+				//.accordion__submenu
+				//	+e.question-box
+

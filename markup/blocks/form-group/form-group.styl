@@ -1,0 +1,33 @@
+.form-group
+	position relative
+	box-sizing border-box
+	border none
+	&_mb
+		margin-bottom: 25px
+		+below(992px)
+			margin-bottom: 20px
+		+mobile()
+			margin-bottom: 1rem
+	&_btn
+		+below(992px)
+			margin-top 10px
+
+	& .g-recaptcha
+		+below(992px)
+			display inline-block
+
+	&__legend
+		color: $gray_9
+		font-size: 12px
+		font-weight: 500
+		line-height: 16px
+		+mobile()
+			padding 4px 0
+
+
+	&.form-control_news
+		flex-grow 1
+		
+	/*switcher*/
+	
+	

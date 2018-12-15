@@ -1,0 +1,101 @@
+@import "../icon-fonts/icon-fonts.styl"
+
+.subMenu
+	position: absolute
+	display: flex
+	background black
+	top: 100%
+	left: 0
+	width: 100vw
+	//box-shadow: inset 0 -1px 0 0 $gray_border
+	transition: .2s linear
+	transform-origin: 0 0
+	transform: scaleY(0)
+	&_header_open
+		transform: scaleY(1)
+	&__list
+		display: flex
+		flex-wrap wrap
+		justify-content: center
+		padding-bottom: 20px
+		margin: auto
+	
+	&__item
+		width: 312px
+		height: 121px
+		border: 1px solid $gray_border
+		padding 12.5px
+		&:hover
+			cursor pointer
+			background: linear-gradient(315deg, #FFCC00 0%, #FF0066 50%, #FF00FF 100%);
+
+.subMenu-mobile
+	overflow auto
+	position: fixed;
+	display: flex
+	flex-direction: column
+	align-items: center
+	padding: 26px 20px
+	z-index 1000
+	left: 0;
+	top: 0;
+	width: 720px;
+	max-width 100vw
+	height: 100vh
+	background-color: #FCFAF6;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease-in-out;
+	&_open
+		transform: translateX(0);
+	&__close
+		position: absolute
+		z-index 99
+		right 0
+		display: block
+		width: 20px
+		height: 20px
+		cursor pointer
+		.line_top
+			transform rotateZ(45deg) translateX(4px) translateY(9px) !important
+		.line_bottom
+			transform rotateZ(-45deg) translateX(-8px) translateY(3px) !important
+		.line_top,
+		.line_bottom
+			display block
+			width 27px
+			height 1px
+			background $colorText
+		&.switch
+			left: 0
+	&__row
+		display: flex
+		height: 80px
+		width: 100%
+		margin 0
+		position: relative
+	&__accordion
+		display: block
+		text-align center
+		padding: 32px 0
+		&.disable 
+			opacity .3
+			pointer-events: none
+	.logo
+		height: 13px
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		svg
+			fill: $asphalt
+	.form-search
+		position: relative
+		display: block;
+		height: 22px
+	.form-search__btn
+		font-size: 22px
+	.form-search__data
+		padding: 0 40px
+		background #FCFAF6
+		
+	.accordion__submenu li:not(:last-child)
+		padding-bottom: 38px

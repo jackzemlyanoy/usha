@@ -1,0 +1,23 @@
+extends ../blocks/layout-default/layout-default
+
+include ../blocks/head/head.pug
+include ../blocks/header/header
+include ../blocks/section/section
+
+
+include ../blocks/footer/footer
+
+block head
+    +head(head.defaults)
+
+block page-class
+    - var pageClassModifier = '_index';
+
+block header
+    +header()
+
+block content
+    //- page layout here
+
+block footer
+    +footer()

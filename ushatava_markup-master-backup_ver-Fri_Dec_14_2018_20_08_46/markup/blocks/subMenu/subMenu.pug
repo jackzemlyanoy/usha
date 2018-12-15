@@ -1,0 +1,163 @@
+include ../btn/btn
+include ../logo/logo
+include ../form-search/form-search
+
+mixin subMenu(data, mobile)
+	if mobile == undefined
+		+b.subMenu&attributes(attributes)(class= data.mod ? '_' + data.mod : '' )
+			+e.UL.list(class= '_' + data.mod)
+				each item in data.list
+					+e.LI.item(class= '_' + data.mod)
+						+e.SPAN.title(class= item.class)
+							| #{item.title}
+	else
+		+b.subMenu-mobile&attributes(attributes)(class= data.mod ? '_' + data.mod : '' )
+			+e.row
+				+form-search._absolute
+				+logo()
+				+e.close
+					.line_top
+					.line_bottom
+			+e.UL.accordion.accordion
+				li.accordion__item
+					span.accordion__title SUMMER WARDROBE 2.0
+					ul.accordion__submenu
+						li
+							a(href="collection.html") collection
+						li
+							a(href="collection.html") campaign
+						li
+							a(href="collection.html") lookbook
+
+				li.accordion__item
+					span.accordion__title.special SPECIAL PRICE
+					ul.accordion__submenu
+						li
+							a(href="collection.html") Шоурум Москва
+						li
+							a(href="collection.html") Шоурум Санкт-Петербург
+						li
+							a(href="collection.html") Шоурум Екатеринбург
+						li
+							a(href="collection.html") Шоурум Сочи
+
+				li.accordion__item
+					span.accordion__title UNISEX
+					ul.accordion__submenu
+						li
+							a(href="collection.html") Шоурум Москва
+						li
+							a(href="collection.html") Шоурум Санкт-Петербург
+						li
+							a(href="collection.html") Шоурум Екатеринбург
+						li
+							a(href="collection.html") Шоурум Сочи
+
+				li.accordion__item
+					span.accordion__title WOMAN
+					ul.accordion__submenu
+						li
+							a(href="collection.html") Шоурум Москва
+						li
+							a(href="collection.html") Шоурум Санкт-Петербург
+						li
+							a(href="collection.html") Шоурум Екатеринбург
+						li
+							a(href="collection.html") Шоурум Сочи
+
+				li.accordion__item
+					span.accordion__title MAN
+					ul.accordion__submenu
+						li
+							a(href="collection.html") Шоурум Москва
+						li
+							a(href="collection.html") Шоурум Санкт-Петербург
+						li
+							a(href="collection.html") Шоурум Екатеринбург
+						li
+							a(href="collection.html") Шоурум Сочи
+
+
+				li.accordion__item
+					span.accordion__title ШОУРУМЫ
+					ul.accordion__submenu
+						li
+							a(href="collection.html") Шоурум Москва
+						li
+							a(href="collection.html") Шоурум Санкт-Петербург
+						li
+							a(href="collection.html") Шоурум Екатеринбург
+						li
+							a(href="collection.html") Шоурум Сочи
+
+
+				li.accordion__item
+					span.accordion__title ИСТОРИЯ БРЕНДА
+					ul.accordion__submenu
+						li
+							a(href="collection.html") Шоурум Москва
+						li
+							a(href="collection.html") Шоурум Санкт-Петербург
+						li
+							a(href="collection.html") Шоурум Екатеринбург
+						li
+							a(href="collection.html") Шоурум Сочи
+
+
+				li.accordion__item
+					span.accordion__title ДОСТАВКА И ОПЛАТА
+					ul.accordion__submenu
+						li
+							a(href="collection.html") Шоурум Москва
+						li
+							a(href="collection.html") Шоурум Санкт-Петербург
+						li
+							a(href="collection.html") Шоурум Екатеринбург
+						li
+							a(href="collection.html") Шоурум Сочи
+
+				li.accordion__item
+					span.accordion__title ПРОГРАММА ЛОЯЛЬНОСТИ
+					ul.accordion__submenu
+						li
+							a(href="collection.html") Шоурум Москва
+						li
+							a(href="collection.html") Шоурум Санкт-Петербург
+						li
+							a(href="collection.html") Шоурум Екатеринбург
+						li
+							a(href="collection.html") Шоурум Сочи
+
+				li.accordion__item
+					span.accordion__title КОНТАКТЫ
+					ul.accordion__submenu
+						li
+							a(href="collection.html") Шоурум Москва
+						li
+							a(href="collection.html") Шоурум Санкт-Петербург
+						li
+							a(href="collection.html") Шоурум Екатеринбург
+						li
+							a(href="collection.html") Шоурум Сочи
+
+
+				li.accordion__item
+					span.accordion__title FAQ
+					ul.accordion__submenu
+						li
+							a(href="collection.html") Шоурум Москва
+						li
+							a(href="collection.html") Шоурум Санкт-Петербург
+						li
+							a(href="collection.html") Шоурум Екатеринбург
+						li
+							a(href="collection.html") Шоурум Сочи
+
+
+			.container__submenu
+				.row.justify-content-between.section__margin-bottom_30
+					+btn({type: 'a', icon: 'vk'})._social.col-auto
+					+btn({type: 'a', icon: 'facebook'})._social.col-auto
+					+btn({type: 'a', icon: 'instagram'})._social.col-auto
+				p.section__text_policy.text-center Нажав на "Подписаться", Вы соглашаетесь с
+					a.link.link_underline политикой конфиденциальности.

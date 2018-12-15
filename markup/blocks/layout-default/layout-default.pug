@@ -1,0 +1,44 @@
+include ../bemto/bemto
+include ../page/page
+include ../container/container
+include ../main-container/main-container
+include ../scripts/scripts
+include ../burger-btn/burger-btn
+include ../colorbox/colorbox
+include ../form-switcher/form-switcher
+include ../form-want/form-want
+include ../subMenu/subMenu
+
+doctype html
+<!--[if IE]><html lang="ru" class="ie"><![endif]-->
+<!--[if lt IE 9]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if IE 9]><html lang="ru" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="ru" class="no-js"> <!--<![endif]-->
+head
+	block head
+
+block page-class
+
++page(class= pageClassModifier || '')
+	| %=symbols=%
+
+	block header
+	+subMenu(subMenu.header, 'mobile')
+	+main-container
+		block content
+
+	block footer
+
+	div(style='display: none;')
+		+colorbox('zoom')#zoom
+	div(style='display: none;')
+		+colorbox()#want
+			+form-want
+	div(style='display: none;')
+		+colorbox()#switcher
+			+form-switcher
+	//div(style='display: none;')
+	//	//+colorbox('chat')#chat
+
+
+	+scripts()

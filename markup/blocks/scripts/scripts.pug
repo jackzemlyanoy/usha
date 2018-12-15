@@ -1,0 +1,30 @@
+mixin scripts(scripts)
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+	script(src='%=static=%js/separate-js/svg4everybody.min.js')
+	script svg4everybody();
+
+
+	script(src= '%=static=%js/separate-js/slick.min.js')
+	script(src= '%=static=%js/separate-js/jquery.colorbox-min.js')
+	script(src= '%=static=%js/main%=hash=%%=min=%.js')
+
+	script(type='text/javascript', src='https://static.yandex.net/browser-updater/v1/script.js', charset='utf-8')
+	script.
+		var yaBrowserUpdater = new ya.browserUpdater.init({
+			"lang": "ru",
+			"browsers": {
+				"yabrowser": "15.6",
+				"chrome": "40",
+				"ie": "10",
+				"opera": "30",
+				"safari": "6",
+				"fx": "40",
+				"iron": "35",
+				"flock": "Infinity",
+				"palemoon": "25",
+				"camino": "Infinity",
+				"maxthon": "4.5",
+				"seamonkey": "2.3"
+			},
+			"theme": "blue"
+		});

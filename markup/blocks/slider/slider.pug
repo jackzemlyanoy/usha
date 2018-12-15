@@ -1,0 +1,55 @@
+include ../info-block/info-block
+
+mixin slider(data)
+	+b.slider&attributes(attributes)(class= data ? '_' + data : '')
+		if data == 'view'
+			+e.item
+				+info-block({img: 'slide_1'})
+			+e.item
+				+info-block({img: 'slide_2'})
+			+e.item
+				+info-block({img: 'slide_3'})
+			+e.item
+				+info-block({img: 'slide_1'})
+			+e.item
+				+info-block({img: 'slide_2'})
+			+e.item
+				+info-block({img: 'slide_3'})
+			+e.item
+				+info-block({img: 'slide_1'})
+			+e.item
+				+info-block({img: 'slide_2'})
+			+e.item
+				+info-block({img: 'slide_3'})
+			+e.item
+				+info-block({img: 'slide_1'})
+			+e.item
+				+info-block({img: 'slide_2'})
+			+e.item
+				+info-block({img: 'slide_3'})
+
+		else if data == 'info-1' || 'info-2'
+			+e.item
+				+info-block({img: 'slide_1', title: 'платье-туника', header: {type: '1', text: 'comming soon'}, price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_2', title: 'БОДИ С V-ВЫРЕЗОМ', price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_3', title: 'БОМБЕР ИЗ ДЕНИМА УДЛИНЁННЫЙ', header: {type: '2', text: 'new'}, price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_1', title: 'КОСТЮМ ХЛОПКОВЫЙ В ПОЛОСКУ', header: {type: '2', text: 'exclusive'}, price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_2', title: 'платье-туника', price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_3', title: 'платье-туника', price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_1', title: 'платье-туника', header: {type: '1', text: 'comming soon'}, price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_2', title: 'платье-туника', price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_3', title: 'платье-туника', header: {type: '1', text: 'comming soon'}, price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_1', title: 'платье-туника', price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_2', title: 'платье-туника', header: {type: '2', text: 'comming soon'}, price: '11500', colors: ['brown', 'beige']})
+			+e.item
+				+info-block({img: 'slide_3', title: 'платье-туника', header: {type: '1', text: 'comming soon'}, price: '11500', colors: ['brown', 'beige']})

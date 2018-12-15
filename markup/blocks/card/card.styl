@@ -1,0 +1,104 @@
+@import "../icon-fonts/icon-fonts.styl"
+
+.card
+	display: flex
+	flex-direction: column
+	+below(812px)
+		padding-x(20px)
+	+mobile()
+		margin-top: 30px
+		
+	&__title
+		font-size: 18px
+		line-height: 30px
+		text-align: left
+		text-transform: uppercase
+		letter-spacing: 7px
+	
+	&__price
+		font-size: 14px
+		line-height: 30px
+		text-align: left
+		text-transform: uppercase
+		letter-spacing: 20%
+	&__title,
+	&__price
+		+mobile()
+			display: none
+	
+	&__row
+		width 100%
+		display: flex
+		align-items: center
+		justify-content: space-between
+		&_item
+			padding-bottom 18px
+	&__submenu
+		display: none
+	
+	&__text
+		text-transform: uppercase
+		letter-spacing 3px
+		&_medium
+			font-size: 10px
+			line-height: 14px
+	&__sizes
+		+below(812px)
+			justify-content: center
+			margin-bottom: 12px
+	
+	&__link
+		padding: 15px 0
+		
+	&__link-bottom
+		color: $colorText
+		padding: 15px 0 8px
+		display: flex
+		align-self flex-start
+		position: relative
+		transition all .3s linear
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			bottom: 0
+			left: 0
+			height: 1px
+			background-color: $asphalt
+			width 95%
+			transition all .3s linear
+		&:hover
+			opacity: 0.5
+			&:after
+				opacity: 0.5
+		&:active
+			opacity: 0.8
+			&:after
+				opacity: 0.8
+		+below(812px)
+			align-self: center
+	
+	&__city
+		line-height 16px
+		font-size: 12px
+	
+	&__amount
+		line-height 16px
+		font-size: 12px
+		font-variant small-caps
+		color #C7A48D
+		&_none
+			color #B37571
+			
+	.mb30
+		+below(812px)
+			margin-bottom: 40px
+		
+	.btn.wh100
+		+below(812px)
+			display: none
+
+	.accordion__item:nth-child(1)
+		+below(812px)
+			border-top: 1px solid #9e9d9b
+			margin-top: 21px

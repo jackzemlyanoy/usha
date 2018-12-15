@@ -1,0 +1,163 @@
+@import "../icon-fonts/icon-fonts.styl"
+
+.menu
+	display: flex
+	width: 100%
+	max-height: 100%
+	&_fixed
+		position fixed
+		top 10px
+		z-index 10
+	&_absolute
+		position absolute
+		top auto
+		bottom 70px
+
+	&__list
+		margin 0
+		display: flex;
+		align-items: center;
+		max-width: 100%
+		+below(991px)
+			text-align center
+		.footer__col &,
+		.header__submenu &
+			width 100%
+			display: flex
+			flex-direction column
+			align-items start
+			//max-height 190px
+		.menu_socials &
+			margin-bottom: 24px
+		.header__submenu &
+			flex-wrap: wrap
+
+
+	&__item
+		display inline-block
+		height: 100%
+		.menu_header-nav &
+			position relative
+			padding-right 46px
+
+		.header__submenu &
+			height auto
+			
+		.footer__col &
+			height: initial
+			width 50%
+
+		&_bordered
+			padding 7.5px 12.5px 9.5px
+			border: 1px solid $gray_c
+
+
+	&__link
+		height 100%
+		display flex
+		align-items: center
+		font-size 16px
+		font-weight normal
+		font-style normal
+		font-stretch normal
+		letter-spacing normal
+		line-height 1
+		text-align center
+		text-decoration none
+		color black
+		cursor pointer
+		transition all .3s linear
+		&:hover
+			opacity 0.5
+		&:active
+			opacity: 0.8
+		&_special
+			color #D5A48C
+			
+		//+tablet()
+		//	padding 20px 0
+		//+mobile()
+		//	padding 15px 0
+		//	display inline-block
+		.header &
+			font-size: 12px
+			line-height: 16px
+			font-weight: 100
+			text-transform: uppercase
+			letter-spacing 3px
+			
+		.header_scrolled &,
+		.header_white &,
+		.header__submenu &
+			color $asphalt
+			&_special
+				color #D5A48C
+		.header_transparent &
+			color white
+			&_special
+				color #D5A48C
+		.header__submenu &
+			color $asphalt
+			padding-y(12.5px)
+			&_special
+				color #D5A48C 		
+			
+	&__title
+		transition color .2s linear
+	
+	&__sublink
+		position: absolute
+		z-index 3
+		top: 100%
+		left: -10px
+		display: inline-flex
+		flex-wrap nowrap
+		height: 48px
+		color black
+		font-size: 14px
+		font-weight: 600
+		line-height: 20px
+		white-space nowrap
+		text-decoration: none
+		transition: transform .2s linear
+		transform-origin: 0 0
+		transform: scaleY(0)
+		&:hover
+			.menu__sublink-arrow::before
+				transform: translateX(5px);
+		&-body
+			padding: 14px 16px
+			background white
+		&-arrow
+			width: 48px
+			background $red
+			color: white
+			font-size: 1rem
+			display: flex
+			justify-content: center
+			align-items: center
+			&:before
+				transition transform 0.2s linear
+				transform: translateX(0);
+
+		.menu__item_header:hover &
+			transform: scaleY(1)
+
+	&_footer
+		text-transform: uppercase
+		.menu__title
+			font-size: 10px
+			font-weight: 500
+			line-height: 40px
+			letter-spacing: 3px
+			color #7F8288
+			white-space nowrap
+		.menu__text
+			font-size: 24px
+			font-weight: 500
+			line-height: 32px
+			margin-bottom: 2rem
+			+mobile()
+				margin-bottom: 1rem
+		
+

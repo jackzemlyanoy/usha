@@ -1,0 +1,244 @@
+@import "../icon-fonts/icon-fonts.styl"
+@import "../container/container.styl"
+
+.slider
+	max-width: 100vw
+	overflow hidden
+
+	&__item
+		height 100%
+		min-height 1px
+
+$slick-font-path = "./fonts/";
+$slick-font-family = "slick";
+$slick-loader-path = "./";
+$slick-arrow-color = #424242;
+$slick-dot-color = #66b3ff;
+$slick-dot-color-active = $slick-dot-color;
+$slick-prev-character = "←";
+$slick-next-character = "→";
+$slick-dot-character = "•";
+$slick-dot-size = 10px;
+$slick-opacity-default = 1;
+$slick-opacity-on-hover = 1;
+$slick-opacity-not-active = 0.25;
+
+/* Slider */
+.slick-loading .slick-list {
+	background: #fff url($slick-loader-path + 'ajax-loader.gif') center center no-repeat;
+}
+
+.slick-list,
+.slick-track
+	height 100%
+
+.slider__btns
+	position: absolute
+	display: flex
+	justify-content: center
+	right 0
+	width 64px
+	height: 100%
+	align-items: center
+	color #BDBDBD
+	&_counter
+		display: flex
+		margin-x(26px)
+		color #59585D
+	&.slider-view,
+	&[class*="slider-info"]
+		+below(812px)
+			display: none
+
+.slider__btn_prev,
+.slider__btn_next
+	display flex
+	height 40px
+	width 40px
+	font-size 1rem
+	cursor pointer
+	top -30px
+	background transparent
+	padding 0
+	border none
+	outline none
+	transition all .3s linear
+	z-index 10
+	&:hover
+		outline none
+		
+.slider__btn_prev:before,
+.slider__btn_next:before
+	transition transform 0.1s linear
+	transform: scale(1);
+	@extend .icon-fonts:before
+.slider__btn_prev
+	&:before
+		@extend	.icon-left:before
+	&:hover
+		&::before
+			transform: scale(1.3);
+.slider__btn_next
+	&:before
+		@extend	.icon-right:before
+	&:hover
+		&::before
+			transform: scale(1.3);
+
+
+/* dots */
+
+.slick-dots
+	@extend .container_big
+	margin: 0 auto;
+	position: absolute;
+	display: flex;
+	left: 0;
+	right: 0;
+	bottom: 66px;
+	list-style: none;
+	text-align: center;
+	padding: 0;
+	& li
+		position relative
+		display inline-block
+		height 4px
+		width 4px
+		margin 0 7px
+		padding 0
+		cursor pointer
+		& button
+			border 0
+			background transparent
+			display block
+			height 4px
+			width 4px
+			outline none
+			line-height 0
+			font-size 0
+			color transparent
+			padding 5px
+			cursor pointer
+			&:hover,
+			&:focus
+				outline none
+				&:before
+					background $white
+			//&:active
+			&:before
+				position absolute
+				top 0
+				left 0
+				content ''
+				width 4px
+				height 4px
+				text-align center
+				border-radius 50%
+				background white
+				transition all .3s ease-out
+				-webkit-font-smoothing antialiased
+				-moz-osx-font-smoothing grayscale
+				.slick-active &
+					background white
+
+				+mobile()
+					border 1px solid $colorText
+
+.slick-dots li.slick-active button:before
+	background white
+	transform scale(2)
+
+//слайдер обзор коллекции
+.slider_view &
+	+mobile()
+		padding-x(10px)
+
+
+
+//слайдер карточки товара
+
+.card-slider
+	position: relative
+	display: flex;
+	width 100%
+	//+mobile()
+	//	padding-x(10px)
+	.slider-single
+		position: relative
+		width: 100%;
+		margin:0;
+		.slick-track.slick-slide
+			height: 740px;
+			max-height: 100%;
+			overflow: hidden;
+		&__img-src
+			width: 100%;
+			min-height: 450px;
+			object-fit: cover;
+	.slider-nav
+		z-index: 99;
+		position: absolute
+		left 0
+		top: 0
+		width: 86px
+		overflow: hidden;
+		.slick-track .slick-slide
+			width: 100%
+			border:0;
+			cursor: pointer;
+		&__img-src
+			width: 100%;
+		.slider-nav__img.slider-nav__img_small.slick-slide.is-active.slick-current
+			transition all .3s linear
+			position relative
+			&:after
+				content ''
+				position: absolute
+				display block
+				width: 100%
+				height: 100%
+				bottom: 0
+				left: 0
+				background-color: rgba(241, 239, 231, 0.8)
+			&:active
+				background-color: rgba(241, 239, 231, 0.5)
+		+mobile()
+			display: none
+	&__options
+		position: absolute
+		display: flex
+		right: 18.79px
+		top: 17px
+		+mobile()
+			flex-direction column
+			align-items flex-end
+		&_item
+			color white
+			display: inline-block
+			text-transform: uppercase
+			font-size: 9px
+			font-weight: bold
+			letter-spacing: 3px
+			//width: 135px
+			+mobile()
+				display: block
+			& + &
+				margin-left: 16px
+				+mobile()
+					margin-left 0
+				
+//слайдер карусели чистых картинок
+.slick-slide
+	[class*="slider_info"] &
+		margin-right: 20px
+		+below(992px)
+			margin-right: 15px
+		+below(500px)
+			margin: 0 20px
+	.slider_view &
+		margin-right: 20px
+		+below(992px)
+			margin-right: 15px
+		+mobile()
+			margin-x(5px)
+	

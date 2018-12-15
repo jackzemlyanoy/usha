@@ -1,0 +1,47 @@
+include ../menu/menu
+include ../logo/logo
+include ../form-search/form-search
+
+mixin footer(data)
+	+b.FOOTER.footer&attributes(attributes)
+		.container_big
+			+e.wrapper.relative
+				+e.desktop.row
+					+e.col.col-lg-2.col-md-3
+						+e.H3.title.section__text.section__text_footer woman
+						+menu(footer.woman)
+					+e.col.col-lg-2.col-md-3
+						+e.H3.title.section__text.section__text_footer men
+						+menu(footer.men)
+					+e.col.col-lg-2.col-md-3
+						+e.H3.title.section__text.section__text_footer шоурумы
+						+menu(footer.shows)
+					+e.col.col-lg-2.col-md-3
+						+e.H3.title.section__text.section__text_footer lookbook
+						+menu(footer.lookbook)
+					+e.col_right.col-lg-3.col-md-12
+						.link.section__text.section__text_footer special price
+						.link.section__text.section__text_footer unisex
+						.link.section__text.section__text_footer limited collection
+				+e.mobile
+					.link.section__text.section__text_footer.section__text-brown special price
+					.link.section__text.section__text_footer unisex
+					.link.section__text.section__text_footer woman
+					.link.section__text.section__text_footer man
+
+
+			+e.subinfo
+				.row.wh100.align-items-center
+					.col-2
+						+logo('A')(href='index.html')
+					.col-lg.col-md-10
+						p.footer__policy
+							a(href='#') Политика защиты
+							|  и обработки персональных данных
+					.col-lg-3.col-md-12
+						+e.socials-block
+							+btn({type: 'a', icon: 'vk'})._social
+							+btn({type: 'a', icon: 'facebook'})._social
+							+btn({type: 'a', icon: 'instagram'})._social
+						+form-search._absolute
+

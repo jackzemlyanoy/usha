@@ -1,0 +1,105 @@
+extends ../blocks/layout-default/layout-default
+
+include ../blocks/head/head
+
+include ../blocks/header/header
+
+include ../blocks/banner/banner
+include ../blocks/info-block/info-block
+include ../blocks/menu/menu
+include ../blocks/form-dispatch/form-dispatch
+include ../blocks/section/section
+include ../blocks/slider/slider
+
+include ../blocks/footer/footer
+
+
+block head
+	+head(head.defaults)
+
+block page-class
+	- var pageClassModifier = '_index';
+
+block header
+	+header()._transparent
+
+block content
+	+section._col._margin-bottom.justify-content-center.align-items-center
+		+banner({title: "NEW LIMITED CRUISE COLLECTION", supertitle: 'new collection', img: 'banner_main'},{type: 'a', url: 'collection.html', color: 'transparent',	text: 'shop now'}, 'main')
+	+section._sex._margin-bottom.mobile-only
+		a unisex
+		a woman
+		a man
+	+section._col._margin-bottom_100.justify-content-center.align-items-center
+		.container_big
+			.row.justify-content-between.relative
+				+e.col.col-md-6.col-sm-12.nopadding
+					+e.IMG.img(src='%=static=%img/content/m1.png')
+					.transitory
+						p SPECIAL PRICES
+						h2 Больше товаров по специальной цене
+						+e.row.justify-content-between.mt-a
+							+btn({type: 'a', color: 'transparent', text: 'shop unisex'})._underline
+							+btn({type: 'a', color: 'transparent', text: 'shop woman'})._underline
+				+e.col.col-md-5.col-sm-12.justify-content-center.desktop-only
+					+e.wrapper
+						+e.H2.title_form SPECIAL PRICES
+						+e.P.text_med.nomargin Универсальный гардероб из натуральных тканей, в основе хлопок и лён. Больше вещей «на все случаи жизни».
+						+e.row.justify-content-between
+							+btn({type: 'a', url: 'collection.html', color: 'transparent',	text: 'shop unisex'})._underline
+							+btn({type: 'a', url: 'collection.html', color: 'transparent',	text: 'shop woman'})._underline
+
+	+section._col._margin-bottom.justify-content-center.align-items-center
+		.container_big.mobile-padding
+			.row.justify-content-between.relative
+				+e.col.col-lg-4.col-sm-12.justify-content-center
+					+e.wrapper
+						+e.H2.title_form Новые модели
+						+e.P.text_med.nomargin Универсальный гардероб из натуральных тканей, в основе хлопок и лён. Больше вещей «на все случаи жизни».
+						+e.row.justify-content-between.mt-a.desktop-only
+							+btn({type: 'a', color: 'transparent', text: 'все новинки'})._underline
+				+e.col.col-lg-4.col-sm-12
+					+info-block({img: 'm2', title: 'платье-туника', price: '11500', colors: ['brown', 'beige']})
+				+e.col.col-lg-4.col-sm-12
+					+info-block({img: 'm3', title: 'БОМБЕР ИЗ ДЕНИМА УДЛИНЁННЫЙ', header: {type: '1', text: 'online exclusive'}, price: '7500'})
+
+
+	+section._col._margin-bottom.justify-content-center.align-items-center
+		.container_big
+			+banner({title: "LIMITED CRUISE COLLECTION", lookbook: true, img: 'banner_1'},{
+				type: 'a',
+				color: 'transparent',
+				text: 'ВДОХНОВЛЕНИЕ'
+			})
+
+	+section._col.justify-content-center.align-items-center
+		.container_big.mobile-padding
+			.row.justify-content-between.relative
+				+e.col.col-md-4.col-sm-12.order-2.order-lg-1
+					+info-block({
+						img: 'm4',
+						title: 'шляпа',
+						header: {type: '2', text: 'sold out'},
+						price: '3500',
+						colors: ['brown', 'black']
+					})
+				+e.col.col-md-4.col-sm-12.order-3.order-lg-2
+					+info-block({
+						img: 'm5',
+						title: 'сумка',
+						header: {type: '2', text: 'comming soon'},
+						price: '6900',
+						colors: ['gray']
+					})
+				+e.col.col-md-4.col-sm-12.order-1.order-lg-3
+					+e.wrapper_top.ml-a
+						+e.H2.title_form.section__margin-bottom_15 UNISEX
+						+e.P.text_med.nomargin В наших новых коллекциях мы говорим об агендерности одежды и стираем границы между мужским и женским гардеробами.
+						+e.row.mt-a.desktop-only
+							+btn({type: 'a', color: 'transparent', text: 'все новинки'})._underline
+
+	+section._col._margin-form.justify-content-center.align-items-center
+		+form-dispatch
+
+block footer
+	+footer()

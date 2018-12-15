@@ -1,0 +1,143 @@
+a.info-block
+	cursor pointer
+	transition all .3s linear
+	
+	img,.info-block__unit
+		transition all .3s linear
+	&:hover
+		img,.info-block__unit
+			opacity 0.5
+	&:active
+		img,.info-block__unit
+			opacity 0.8
+			
+	
+.info-block
+	display flex
+	flex-direction column
+	width 100%
+	text-decoration none
+	cursor pointer
+	position: relative
+	
+
+	+desktop()
+		min-height 350px
+
+	+tablet()
+		min-height 300px
+
+	+mobile()
+		min-height 0
+
+	.slider-block &
+		margin-top 0
+		margin-bottom 0
+	
+	&__img
+		display: block
+		height: 390px
+		width inherit
+		object-fit: cover
+		padding-bottom: 0
+		.ie9 &
+			width 100%
+		+mobile()
+			height 350px
+		+below(500px)
+			height 310px
+			
+		+below(425px)
+			.page_collection &,
+			.slider_view &
+				height 230px
+		
+	&__inner-wrapper
+		position: absolute
+		right: 0;
+		left: 0;
+		margin: auto;
+		padding 15px
+		display flex
+		flex-direction column
+		align-items center
+		height 60%
+		bottom: 0
+
+			
+	&__unit
+		color $asphalt
+		display: inline-flex
+		margin-bottom: 7px
+		
+	&__article
+		margin-bottom: 24px
+		font-size: 16px
+		line-height: 24px
+		color: $gray_9
+
+
+	&__info
+		padding-top 19.5px
+		text-align: left
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		font-weight normal
+		+mobile()
+			padding-x(20px)
+		.btn
+			margin-top: auto;
+		&.section__row
+			flex-wrap nowrap
+			
+	&__header
+		z-index 99
+		display: inline-flex
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		padding: 5px
+		color rgba(255, 255, 255, 1)
+		font-size: 9px
+		line-height: 12px
+		letter-spacing: 3px;
+		text-transform: uppercase
+		justify-content: center;
+		&_1
+			//background-color: #D5A48C
+			background-color: rgba(213, 164, 140, 0.8)
+		&_2
+			//background-color: #BDBDBD
+			background-color: rgba(189, 189, 189, 0.8)
+			
+	&__btn
+		margin-top 24px
+
+	&__colors
+		display: flex
+		direction: rtl
+	&__color
+		display: block
+		width: 10px
+		height: 10px
+		margin-left: 7.35px
+		&_brown
+			background-color: $brown
+		&_beige
+			background-color: $beige_icon
+		&_green
+			background-color: $green
+		&_blue
+			background-color #CFF3FF
+			
+		&_gray
+			background-color: $gray_cloth
+			
+		&_black
+			background-color: black
+			
+	
+	&__footer
+		margin-top: auto

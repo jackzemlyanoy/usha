@@ -1,0 +1,23 @@
+mixin container(data)
+    if data
+        if data === 'aside'
+            +b.ASIDE(class='container__' + [data])&attributes(
+            attributes)
+                block
+        else if data === 'content'
+            +b.SECTION(class='container__' + [data])&attributes(
+            attributes)
+                block
+        else
+            +b(class='container__' + [data])&attributes(
+            attributes)
+                block
+
+    else
+        +b.container
+            block
+
+
+
+
+

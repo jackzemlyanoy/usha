@@ -1,0 +1,111 @@
+extends ../blocks/layout-default/layout-default
+
+include ../blocks/head/head
+
+include ../blocks/header/header
+
+include ../blocks/banner/banner
+include ../blocks/card/card
+include ../blocks/menu/menu
+include ../blocks/form-dispatch/form-dispatch
+include ../blocks/section/section
+include ../blocks/slider/slider
+include ../blocks/card-add/card-add
+
+include ../blocks/footer/footer
+
+block head
+	+head(head.defaults)
+
+block page-class
+	- var pageClassModifier = '_card';
+
+block header
+	+header()._white
+
+block content
+	+section._margin-bottom._margin-header.justify-content-center
+		.container_big
+			.row.justify-content-between
+				.col-lg-6.col-md-6.col-sm-12
+					.card-slider
+						+b.slider-nav
+							+e.img._small
+								+e.IMG.img-src(src='%=static=%img/assets/slider/1.png')
+							+e.img._small
+								+e.IMG.img-src(src='%=static=%img/assets/slider/2.png')
+							+e.img._small
+								+e.IMG.img-src(src='%=static=%img/assets/slider/3.png')
+							+e.img._small
+								+e.IMG.img-src(src='%=static=%img/assets/slider/1.png')
+							+e.img._small
+								+e.IMG.img-src(src='%=static=%img/assets/slider/2.png')
+							+e.img._small
+								+e.IMG.img-src(src='%=static=%img/assets/slider/3.png')
+
+						+b.slider-single
+							+e.img
+								+e.IMG.img-src(src='%=static=%img/assets/slider/1.png').colorbox-trigger-zoom
+							+e.img
+								+e.IMG.img-src(src='%=static=%img/assets/slider/2.png').colorbox-trigger-zoom
+							+e.img
+								+e.IMG.img-src(src='%=static=%img/assets/slider/3.png').colorbox-trigger-zoom
+						.card-slider__options
+							span.card-slider__options_item.card-slider__options_item--online online exclusive
+							span.card-slider__options_item.card-slider__options_item--soon coming soon
+				.col-lg-5.col-md-6.col-sm-12
+					+card({title: 'Бомбер из денима удлинённый', price: '7 500'})
+	+section._col._margin-bottom_100.justify-content-center.align-items-center.oh
+		.container_big
+			+e.row_slider-head.justify-content-md-between.justify-content-center.relative
+				+e.H3.text_large Как мы это носим
+				.slider__btns.slider-view.slider-view
+					button.slider__btn_prev
+					span.slider__btns_counter.section__text.section__text_medium 3/14
+					button.slider__btn_next
+			+e.row_slider-view
+				+slider('view').absolute
+			+card-add.mobile-only
+
+
+	hr(noshade).hr.mobile-only
+	+section._col._margin-bottom_100.justify-content-center.align-items-center.oh
+		.container_big
+			+e.row_slider-head.justify-content-md-between.justify-content-center.relative
+				.section_col.align-items-center
+					+e.H3.text_large.section__margin-bottom_10 создай образ
+					span.mobile-only.section__text_normal 1/4 вариантов
+				.slider__btns.slider-info-1.mobile-padding
+					button.slider__btn_prev
+					span.slider__btns_counter.section__text.section__text_medium 3/14
+					button.slider__btn_next
+			+e.row_slider-info
+				+slider('info-1').absolute
+	hr(noshade).hr.mobile-only
+	+section._col._margin-bottom_100.justify-content-center.align-items-center.oh
+		.container_big
+			+e.row_slider-head.justify-content-md-between.justify-content-center.relative
+				.section_col.align-items-center
+					+e.H3.text_large.section__margin-bottom_10 похожие товары
+					span.mobile-only.section__text_normal 1/4 вариантов
+				.slider__btns.slider-info-2
+					button.slider__btn_prev
+					span.slider__btns_counter.section__text.section__text_medium 3/14
+					button.slider__btn_next
+			+e.row_slider-info
+				+slider('info-2').absolute
+
+
+	+section._col.justify-content-center.align-items-center.desktop-only
+		.container_big
+			+banner({title: "заголовок баннера", lookbook: true, img: 'banner_1'},{
+				type: 'a',
+				color: 'transparent',
+				text: 'ВДОХНОВЛЕНИЕ'
+			}, 'card')
+	+section._col._margin-form.justify-content-center.align-items-center.desktop-only
+		+form-dispatch
+
+block footer
+	+footer
+	+card-add._fixed.mobile-only

@@ -1,0 +1,89 @@
+// Mixins.
+/*
+HOW IT WORKS:
+1) initial stage
+
+placeholder()
+    .inner_class
+        {block} // here is your property when calling a mixin
+
+2) calling stage
+
++placeholder() //stylus code
+    width: 10px //block property
+
+3) out
+
+=> .inner_class {
+    width: 10px;
+}
+
+*/
+m-nl()
+    margin 0
+    padding 0
+    text-indent 0
+    list-style none
+    list-style-position outside
+
+m-cf()
+    &:before, &:after
+        display table
+        content ""
+    
+    &:after
+        clear both
+    
+    .lt-ie8 &
+        zoom 1
+
+
+m-blocks-justify()
+    text-align justify
+    text-justify newspaper
+
+
+// You can add your own mixins here:
+
+padding-x()
+    padding-left arguments
+    padding-right arguments
+
+padding-y()
+    padding-top arguments
+    padding-bottom arguments
+
+margin-x()
+    margin-left arguments
+    margin-right arguments
+
+margin-y()
+    margin-top arguments
+    margin-bottom arguments
+    
+    
+// Placeholder styles
+placeholder()
+    &::-webkit-input-placeholder
+        {block}
+    &:-moz-placeholder
+        {block}
+    &::-moz-placeholder
+        {block}
+    &:-ms-input-placeholder
+        {block}
+
+
+
+
+support-for-ie ?= true
+
+opacity(n)
+    opacity n
+    if support-for-ie
+        filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')
+
+
+ie9()
+    .ie9 &
+        {block}

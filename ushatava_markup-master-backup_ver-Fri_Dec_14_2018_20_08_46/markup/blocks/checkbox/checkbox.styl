@@ -1,0 +1,57 @@
+.checkbox input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	margin: 10px 0 0 20px;
+}
+
+.checkbox__text
+	position: relative;
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 50px
+	height: 50px
+	cursor: pointer;
+	border 1px solid #E0E0E0;
+
+.none
+	pointer-events: none;
+	.checkbox__text:after
+		border-bottom: 1px solid #E0E0E0;
+		position: absolute;
+		content: "";
+		width: 140%;
+		height: 0;
+		transform: rotate(-45deg);
+	.checkbox__text:before
+		color  #E0E0E0
+
+.checkbox__text:before
+	z-index: 9;
+	position: absolute;
+	display: flex
+	justify-content: center
+	align-items: center
+	font-size: 12px
+	width: 25%;
+	height: 25%;
+	background: white
+	transition: .2s;
+	.checkbox-s &
+		content: 'S'
+	.checkbox-m &
+		content: 'М'
+	.checkbox-l &
+		content: 'L'
+
+.checkbox input:checked + .checkbox__text
+	background: rgba(234, 205, 178, 0.5)
+	border 1px solid #EACDB2
+	
+.checkbox input:checked + .checkbox__text:before
+	background: transparent;
+
+
+.checkbox + .checkbox
+	margin-left: 20px

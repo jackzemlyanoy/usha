@@ -1,0 +1,23 @@
+include ../form-group/form-group
+
+mixin form-want(data)
+	+b.form-want&attributes(attributes)
+		.container_form.d-flex.flex-wrap.flex-column
+			h2 Хочу купить
+			p.section__text_normal Введите адрес Вашей электронной почты, и мы оповестим Вас, когда товар снова поступит в продажу.
+			+form-group({
+				id: 'r_2',
+				name: 'r_2',
+				type: 'text',
+				placeholder: 'Введите свой e-mail',
+				class: 'form-control_want'
+			}).section__margin-bottom_30
+
+			+form-group({
+				id: 'r_10',
+				name: 'r_10',
+				type: 'submit',
+				submit: 'Получить оповещение'
+			}).btn_brown._big.wh100.justify-content-center
+			span Нажав на "Подписаться", Вы соглашаетесь с
+				a.link.link_underline политикой конфиденциальности.

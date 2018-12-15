@@ -1,0 +1,26 @@
+include ../form-control/form-control
+include ../btn/btn
+
+//-use example
+	+form-group({id: 'r_1', name: 'r_1', type: 'text'}) ФИО
+	+form-group({id: 'r_2', name: 'r_2', type: 'email'}) email
+	+form-group({id: 'r_3', name: 'r_3', type: 'text'}) Телефон
+	+form-group({id: 'r_4', name: 'r_4', type: 'text'}) Ваше сообщение
+
+
+mixin form-group(args)
+	+b.FIELDSET.form-group(class= args.grow ? 'flex-grow-1' : '')
+		if args.legendText
+			+e.LEGEND.legend #{args.legendText}
+
+		if args.placeholder
+			+form-control(args)&attributes(attributes)
+
+		else if args.type !== 'submit'
+			+e.LABEL.label(for=attributes.id ? attributes.id : null)
+				block
+			+form-control(args)
+		else
+			+btn({type: 'button', text: args.submit, color: attributes.btn})(type='submit', id=
+			attributes.id)&attributes(attributes)
+

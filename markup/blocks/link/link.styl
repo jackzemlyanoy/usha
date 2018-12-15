@@ -1,0 +1,60 @@
+.link
+    display inline-block
+    text-decoration none
+    line-height 1
+    transition all .3s ease-out
+    color inherit
+    &:hover
+        cursor pointer
+        text-decoration underline
+    //& + &
+    //    margin-left 20px
+
+
+    &_underline
+        @extend .btn_underline
+        &:hover
+            @extend .btn_underline:hover        
+        .container_form &
+            align-self center
+            &:after
+                background-color: $colorText
+                        
+
+    &_order
+        text-decoration none
+
+    &_flex
+        display flex
+        align-items center
+
+    &_black
+        color black
+
+    &_white
+        color white
+
+    &_gray
+        color $gray_9
+        
+
+    &_warm-grey
+        color grey
+
+    
+
+    &_icon
+        & .icon
+            margin-top -2px
+            margin-right 12px
+            display inline-block
+            vertical-align middle
+
+    &__item
+        & + &
+            margin-left 20px
+
+    &__note
+        margin-top 3px
+        display block
+        color gray

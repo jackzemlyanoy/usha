@@ -1,0 +1,31 @@
+include ../btn/btn
+
+
+mixin info-block(data)
+	+b(data.type ? data.type : '')(href= data.link ? data.link : '#').info-block&attributes(attributes)
+		if data.img
+			+e.IMG.img(src='%=static=%img/content/' + data.img + '.png')
+		if data.header
+			+e.SPAN.header(class= '_' + data.header.type)
+				span #{data.header.text}
+		if data.title
+			+e.SPAN.info.section__row
+				span.section_col.grow
+					+e.H4.unit.section__text #{data.title}
+					+e.SPAN.unit.section__text
+						+e.SPAN.price #{data.price}
+						| &nbsprub
+				span.section_col
+					if data.colors
+						+e.UL.colors
+							each item in data.colors
+								+e.LI.unit
+									+e.SPAN.color(class= '_' + item)
+
+			if block
+				+e.P.article
+					block
+			if data.btn
+				+btn({type: 'a', color: 'transparent', text: 'Подробнее'})._big(class= data.btn)
+
+//-exapmle +info-block({img: 'gruzin', title: 'Десерты', btn: true},{innerTitle: 'Фастфуд', innerText: 'Новые гамбургеры в меню Roll\'s'}) C 03:00 ночи и до 15:00 дня скидка 20% на доставку от 1000 рублей.

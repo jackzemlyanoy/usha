@@ -1,0 +1,14 @@
+include ../switcher/switcher
+include ../form-want/form-want
+
+mixin colorbox(type)
+	.colorbox&attributes(attributes)
+		if type == 'zoom'
+			.colorbox__img
+			.colorbox__thumbnails
+				img(src="/static/img/assets/slider/1.png")
+				img(src="/static/img/assets/slider/2.png")
+				img(src="/static/img/assets/slider/3.png")
+				img(src="/static/img/assets/slider/4.png")
+		else
+			block

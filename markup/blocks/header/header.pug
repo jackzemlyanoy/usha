@@ -1,0 +1,35 @@
+include ../menu/menu
+include ../toper/toper
+include ../subMenu/subMenu
+include ../logo/logo
+include ../burger-btn/burger-btn
+
+mixin header()
+	+b.HEADER.header&attributes(attributes)
+		.container_big
+			+e.wrapper
+				+e.row.align-items-baseline
+					+e.mobile-btn
+						+burger-btn
+					.col-lg-2.col-md.nopadding
+						+e.logo
+							+logo('A')(href='index.html')
+						+toper.section__text.section__text_normal вверх
+					.col.header-menu
+						+menu(header.nav)
+
+					.col-1.nopadding.d-flex.justify-content-end
+						+e.A.basket(href= 'cart.html')
+							include ../../static/img/svg/cart.svg
+							//-!= pugHelpers.Icon.call(locals, {iconName: 'cart', className: 'header__basket-icon', iconWidth: '20.6', iconHeight: '22'})
+							span.basket-summ
+								span.basket-summ__quantity 99
+			+e.submenu
+				.col-3
+					+menu(header.drop_category)
+				.col.flex-wrap
+					+menu(header.drop_goods)
+				.col-3.d-flex.justify-content-center.align-items-center
+					+e.IMG.submenu-img(src='%=static=%img/assets/slider/1.png')
+
+			+subMenu(subMenu.header)

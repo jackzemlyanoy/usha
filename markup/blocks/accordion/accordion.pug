@@ -1,0 +1,13 @@
+mixin accordion(data)
+	ul.accordion&attributes(attributes)
+		block
+
+mixin accordion-item(data)
+	- var classes = ['accordion__item']
+	if data.open
+		- classes.push(classes[0] + '_active')
+
+	li(class=classes)&attributes(attributes)
+		span.accordion__header
+		span.accordion__content
+			block

@@ -1,0 +1,9 @@
+mixin btn(data)
+	+b(data.type)(class= data.color ? 'btn_' + data.color : '', href= data.url ? data.url : '#').btn&attributes(attributes)
+		if data.icon
+			+e.icon(class='_' + data.icon)
+		if data.text
+			+e.text(class= data.arrow ? '_arrow' : '')
+				| #{data.text}
+
+

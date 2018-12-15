@@ -1,0 +1,28 @@
+include ../switcher/switcher
+
+mixin form-switcher(data)
+	+b.form-switcher&attributes(attributes)
+		.container_form
+			h2 Узнать мой размер
+			strong Ваши прарметры
+			p.section__text_normal Определите наиболее подходящий размер на основании параметров людей с похожей фигурой:
+
+			.section__row.justify-content-between.align-items-center.section__margin-bottom_20
+				+form-group({
+					id: 'user_height',
+					name: 'user_height',
+					type: 'text',
+					placeholder: 'РОСТ',
+					class: 'form-control_want'
+				})
+				+switcher.height
+			.section__row.justify-content-between.align-items-center.section__margin-bottom_50
+				+form-group({
+					id: 'user_weight',
+					name: 'user_weight',
+					type: 'text',
+					placeholder: 'ВЕС',
+					class: 'form-control_want'
+				})
+				+switcher.weight
+			a.link.link_underline Защита данных

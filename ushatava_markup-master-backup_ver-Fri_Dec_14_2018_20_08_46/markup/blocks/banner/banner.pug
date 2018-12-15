@@ -1,0 +1,18 @@
+include ../btn/btn
+
+mixin banner(args, btnData, special)
+	+b.banner&attributes(attributes)(class= special ? '_' + special : '')
+		+e.img
+			+e.IMG.img-src(src='%=static=%img/assets/banner/' + args.img + '.png')
+		+e.wrapper
+			if args.lookbook
+				+e.A.lookbook(href='#') lookbook
+			if args.supertitle
+				+e.SPAN.supertitle #{args.supertitle}
+			if args.title
+				+e.H2.title #{args.title}
+			if block
+				+e.P.text_subtitle
+					block
+			if btnData
+				+btn(btnData)._underline
