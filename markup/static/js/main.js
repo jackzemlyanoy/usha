@@ -1,7 +1,7 @@
 'use strict';
 
 import '../../blocks/header/header';
-//import '../../blocks/menu/menu';
+// import '../../blocks/menu/menu';
 import '../../blocks/card/card';
 import '../../blocks/burger-btn/burger-btn';
 import '../../blocks/accordion/accordion';
@@ -17,3 +17,10 @@ import '../../blocks/switcher/switcher';
 $(window).on('load', function () {
     $(window).trigger('resize');
 });
+// $('.header__submenu').on('mouseleave', function (event) {
+//     $(".header__submenu").remove('show');
+// }); // закрыть при клике на пункт или вне меню
+
+$('.header__submenu').on('mouseleave', function (event) {
+    document.querySelector('.show').classList.remove('show');
+}); // закрыть при клике на пункт или вне меню
